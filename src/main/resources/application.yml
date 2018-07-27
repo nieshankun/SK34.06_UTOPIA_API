@@ -1,0 +1,16 @@
+spring:
+  rabbitmq:
+    publisher-confirms: true
+    publisher-returns: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/rabbitmq
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+utopia:
+  rabbitmq:
+     service-name: nsk-rabbit-local
