@@ -4,6 +4,7 @@ import com.nsk.demo.rabbitmq.queue.QueueService;
 import com.rabbitmq.client.Channel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.amqp.AmqpException;
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.Connection;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -41,7 +42,7 @@ public class RabbitMQService {
     public void sendStatic(){
         rabbitTemplate.convertAndSend("nsk", "handsome", "type1");
         rabbitTemplate.convertAndSend("hsy", "first", "type2");
-        rabbitTemplate.convertAndSend("nsk", "handsome", "type1");
+        rabbitTemplate.convertAndSend("nsk", "handsome", "type1--1");
     }
 
     public void sendDynamic(String queueName, String exchange, String routingKey) {

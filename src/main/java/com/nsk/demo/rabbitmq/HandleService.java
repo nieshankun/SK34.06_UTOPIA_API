@@ -33,6 +33,9 @@ public class HandleService implements ChannelAwareMessageListener {
             case "type2":
                 isDeal = type2(type);
                 break;
+            case "type1--1":
+                isDeal = type1(type);
+                break;
         }
         if (isDeal) {
             basicAck(message, channel);
@@ -43,14 +46,14 @@ public class HandleService implements ChannelAwareMessageListener {
 
     private boolean type1(String type) throws Exception {
         logger.info("The business:" + type + " is dealing with");
-        Thread.sleep(30000);
+        Thread.sleep(3000);
         logger.info("The business:" + type + " is resolved");
         return true;
     }
 
     private boolean type2(String type) throws Exception {
         logger.info("The business:" + type + " is dealing with");
-        Thread.sleep(30000);
+        Thread.sleep(3000);
         logger.info("The business:" + type + " is resolved");
         return true;
     }
